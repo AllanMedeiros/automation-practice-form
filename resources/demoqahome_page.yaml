@@ -1,0 +1,41 @@
+# Locators works better if they are id or css, but xpath may work when there is no other way, but is not recommended.
+# Naming convetion: [ElementName_Type]
+# Type can be one of these below, more can be added as needed:
+
+# Types of Web Elements
+# mn        - Menu item / option
+# smn       - Submenu item / option
+# btn       - Button
+# pwd       - Password or secret field
+# nmb       - Any number
+# txt       - Free text field
+# date      - Date in the format as set in the OS and browser
+# email     - Email address field
+# chk       - Checkbox
+# lnk       - Link text
+# icn       - Icon link
+# cur       - Currency
+# htm       - Static html
+# msel      - Selection list where all the options are listed with a scrollbar. Multiple items can be selected by keeping CRTL or SHIFT pressed.
+# rstxt     - Resizable <textarea>
+# scrn      - screenshoot name
+# sel       - Selection list where all the options are listed with a scrollbar. Only one item can be selected.
+# opt       - Each option within a dropdown or list selection fields.
+# rdi       - Radio option
+# tab       - Tab item to switch pages
+# lkp       - Lookup text field, with a magnifying glass button to search for an item on a popup window
+# tbl       - Table
+# cell      - Table cell
+# row       - Table row
+# col       - Table column
+
+# Conventions:
+#  1. If the locator matches more than one web element, please start its name with "all" or "any".
+#  2. Element Type must follow what is visible to the user, no matter the real HTML tag of the element.
+
+homepage:
+  forms_mn:               css=div.top-card:nth-child(2) svg
+  page_title_htm:         css=div.main-header
+
+formspage:
+  practice_form_mn:       css=div.element-group:nth-child(2) li#item-0

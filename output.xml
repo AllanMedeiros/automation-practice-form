@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.12 on win32)" generated="20231215 19:45:34.988" rpa="false" schemaversion="4">
+<suite id="s1" name="Ui" source="c:\dev\automation-practice-form\tests\ui">
+<kw name="Initial setup" library="browser" type="SETUP">
+<kw name="Setup Browser Capabilities" library="browser">
+<var>${browser_capabilities}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${chrome arg list}</var>
+<arg>--start-maximized</arg>
+<arg>--disable-web-security</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231215 19:45:35.536" level="INFO">${chrome arg list} = ['--start-maximized', '--disable-web-security', '--ignore-certificate-errors']</msg>
+<status status="PASS" starttime="20231215 19:45:35.535" endtime="20231215 19:45:35.538"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>args=${chrome arg list}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231215 19:45:35.540" level="INFO">${chrome_options} = {'args': ['--start-maximized', '--disable-web-security', '--ignore-certificate-errors']}</msg>
+<status status="PASS" starttime="20231215 19:45:35.539" endtime="20231215 19:45:35.540"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${experimental_option}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231215 19:45:35.541" level="INFO">${experimental_option} = ['enable-automation']</msg>
+<status status="PASS" starttime="20231215 19:45:35.541" endtime="20231215 19:45:35.541"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${prefs}</var>
+<arg>credentials_enable_service=${False}</arg>
+<arg>profile.password_manager_enabled=${False}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231215 19:45:35.542" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<status status="PASS" starttime="20231215 19:45:35.541" endtime="20231215 19:45:35.543"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${chrome_options}</arg>
+<arg>excludeSwitches</arg>
+<arg>${experimental_option}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.543" endtime="20231215 19:45:35.543"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${chrome_options}</arg>
+<arg>useAutomationExtension</arg>
+<arg>${False}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.544" endtime="20231215 19:45:35.544"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${chrome_options}</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.544" endtime="20231215 19:45:35.545"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${desired chrome caps}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231215 19:45:35.546" level="INFO">${desired chrome caps} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20231215 19:45:35.545" endtime="20231215 19:45:35.546"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired chrome caps}</arg>
+<arg>goog:chromeOptions</arg>
+<arg>${chrome_options}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.546" endtime="20231215 19:45:35.547"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired chrome caps}</arg>
+<arg>acceptSslCerts</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.547" endtime="20231215 19:45:35.548"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired chrome caps}</arg>
+<arg>acceptInsecureCerts</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.549" endtime="20231215 19:45:35.550"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${firefox_capabilities}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231215 19:45:35.551" level="INFO">${firefox_capabilities} = {}</msg>
+<status status="PASS" starttime="20231215 19:45:35.550" endtime="20231215 19:45:35.551"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${firefox_capabilities}</arg>
+<arg>acceptSslCerts</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.551" endtime="20231215 19:45:35.552"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${firefox_capabilities}</arg>
+<arg>acceptInsecureCerts</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.552" endtime="20231215 19:45:35.553"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${desired ie caps}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER</arg>
+<arg>sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231215 19:45:35.554" level="INFO">${desired ie caps} = {'browserName': 'internet explorer', 'platformName': 'windows'}</msg>
+<status status="PASS" starttime="20231215 19:45:35.553" endtime="20231215 19:45:35.554"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired ie caps}</arg>
+<arg>IgnoreZoomSetting</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.555" endtime="20231215 19:45:35.556"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired ie caps}</arg>
+<arg>acceptSslCerts</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.556" endtime="20231215 19:45:35.557"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${desired ie caps}</arg>
+<arg>ie.EnsureCleanSession</arg>
+<arg>${True}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231215 19:45:35.557" endtime="20231215 19:45:35.558"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>"${BROWSER}" in "chrome", "googlechrome", "gc", "headlesschrome"</arg>
+<arg>${desired chrome caps}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20231215 19:45:35.558" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20231215 19:45:35.558" endtime="20231215 19:45:35.559"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>"${BROWSER}" in "firefox", "ff", "headlessfirefox"</arg>
+<arg>${firefox_capabilities}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20231215 19:45:35.559" endtime="20231215 19:45:35.559"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>"${BROWSER}" in "ie", "internetexplorer"</arg>
+<arg>${desired ie caps}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20231215 19:45:35.559" endtime="20231215 19:45:35.560"/>
+</kw>
+<msg timestamp="20231215 19:45:35.560" level="INFO">${browser_capabilities} = {'browserName': 'chrome', 'goog:chromeOptions': {'args': ['--start-maximized', '--disable-web-security', '--ignore-certificate-errors'], 'excludeSwitches': ['enable-automation'], 'useAutomationExtensi...</msg>
+<status status="PASS" starttime="20231215 19:45:35.535" endtime="20231215 19:45:35.560"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${BROWSER}&quot; in (&quot;chrome&quot;, &quot;googlechrome&quot;, &quot;gc&quot;, &quot;headlesschrome&quot;, &quot;firefox&quot;, &quot;ff&quot;, &quot;headlessfirefox&quot;, &quot;ie&quot;, &quot;internetexplorer&quot;)">
+<kw name="Open Browser">
+<arg>url=about:blank</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=http://${SELENIUM_SERVER}:${SELENIUM_PORT}/wd/hub</arg>
+<arg>desired_capabilities=${browser_capabilities}</arg>
+<status status="NOT RUN" starttime="20231215 19:45:35.565" endtime="20231215 19:45:35.566"/>
+</kw>
+<status status="NOT RUN" starttime="20231215 19:45:35.561" endtime="20231215 19:45:35.566"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fatal Error" library="BuiltIn">
+<arg>Browser ${BROWSER} is not supported, check your variables file!</arg>
+<doc>Stops the whole test execution.</doc>
+<msg timestamp="20231215 19:45:35.567" level="FAIL">Browser  is not supported, check your variables file!</msg>
+<status status="FAIL" starttime="20231215 19:45:35.567" endtime="20231215 19:45:35.572"/>
+</kw>
+<status status="FAIL" starttime="20231215 19:45:35.566" endtime="20231215 19:45:35.573"/>
+</branch>
+<status status="FAIL" starttime="20231215 19:45:35.561" endtime="20231215 19:45:35.573"/>
+</if>
+<status status="FAIL" starttime="20231215 19:45:35.534" endtime="20231215 19:45:35.573"/>
+</kw>
+<suite id="s1-s1" name="Practice Form Fill" source="c:\dev\automation-practice-form\tests\ui\practice_form_fill.robot">
+<test id="s1-s1-t1" name="Fill Form with random values" line="7">
+<tag>challenge_1</tag>
+<tag>frontend</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20231215 19:45:35.577" endtime="20231215 19:45:35.579">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20231215 19:45:35.573" endtime="20231215 19:45:35.583"/>
+</suite>
+<kw name="Close All Browsers" type="TEARDOWN">
+<msg timestamp="20231215 19:45:35.597" level="FAIL">No keyword with name 'Close All Browsers' found.</msg>
+<status status="FAIL" starttime="20231215 19:45:35.596" endtime="20231215 19:45:35.600">No keyword with name 'Close All Browsers' found.</status>
+</kw>
+<doc>Initial setup required for any test suite</doc>
+<status status="FAIL" starttime="20231215 19:45:35.002" endtime="20231215 19:45:35.600">Suite setup failed:
+Browser  is not supported, check your variables file!
+
+Also suite teardown failed:
+No keyword with name 'Close All Browsers' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">challenge_1</stat>
+<stat pass="0" fail="1" skip="0">frontend</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Ui">Ui</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Practice Form Fill">Ui.Practice Form Fill</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231215 19:45:35.450" level="ERROR">Error in file 'c:\dev\automation-practice-form\resources\browser.resource' on line 2: Initializing library 'SeleniumLibrary' with arguments [ timeout= ] failed: ValueError: Invalid time string ''.
+Traceback (most recent call last):
+  File "c:\dev\automation-practice-form\env\lib\site-packages\SeleniumLibrary\__init__.py", line 475, in __init__
+    self.timeout = _convert_timeout(timeout)
+  File "c:\dev\automation-practice-form\env\lib\site-packages\SeleniumLibrary\utils\types.py", line 42, in _convert_timeout
+    return timestr_to_secs(timeout)
+  File "c:\dev\automation-practice-form\env\lib\site-packages\robot\utils\robottime.py", line 67, in timestr_to_secs
+    raise ValueError("Invalid time string '%s'." % timestr)
+ValueError: Invalid time string ''.</msg>
+</errors>
+</robot>

@@ -33,13 +33,6 @@
 #  1. If the locator matches more than one web element, please start its name with "all" or "any".
 #  2. Element Type must follow what is visible to the user, no matter the real HTML tag of the element.
 
-homepage:
-  page_title_htm:             css=div.main-header
-  forms_mn:                   css=div.top-card:nth-child(2) svg
-  alerts_frame_windows_mn:    css=div.top-card:nth-child(3) svg
-
-formspage:
-  practice_form_mn:           css=div.element-group:nth-child(2) li#item-0
-
-alertspage:
-  browser_windows_mn:         css=div.element-group:nth-child(3) li#item-0
+browser_windows_page:
+  new_window_btn:           id=windowButton
+  new_window_text_htm:      css=h1#sampleHeading

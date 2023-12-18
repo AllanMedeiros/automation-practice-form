@@ -14,3 +14,9 @@ navigate to Forms > Practice Form
     Element Should Contain    ${homepage.page_title_htm}    Forms            message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
     Click Element    ${formspage.practice_form_mn}
     Element Should Contain    ${homepage.page_title_htm}    Practice Form    message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+
+navigate to Alerts, Frame & Windows > Browser Windows
+    Click Element    ${homepage.alerts_frame_windows_mn}
+    Element Should Contain    ${homepage.page_title_htm}    Alerts, Frame & Windows    message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+    Click Element    ${alertspage.browser_windows_mn}
+    Element Should Contain    ${homepage.page_title_htm}    Browser Windows            message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})

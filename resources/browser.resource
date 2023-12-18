@@ -12,12 +12,13 @@ ${SELENIUM_SERVER}
 ${SELENIUM_PORT}
 ${SELENIUM_TIMEOUT}
 ${BROWSER}
+${PROFILE_PATH}
 
 *** Keywords ***
 Initial setup
-    # ${browser_options}    Setup Browser Options
     # This test suite was only tested in Chrome for the moment (hardcoded Chrome Options)
-    # ${PROFILE_PATH}    Set Variable    C:\\Users\\allan\\AppData\\Local\\Temp
+    # ${browser_options}    Setup Browser Options
+
     ${EXC_SWITCHES}    Create List    enable-automation    enable-logging
 
     # Setting this SPKI encoded list using list variable is not working, so they are hardcoded in options paramenter
@@ -41,5 +42,5 @@ Setup Browser Options
   No Operation
 
 Wait before fail and take screenshot
-    Sleep  5 s
+    Sleep  2 s
     Capture Page Screenshot

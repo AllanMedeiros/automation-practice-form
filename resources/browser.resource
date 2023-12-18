@@ -1,9 +1,10 @@
 *** Settings ***
-Library             SeleniumLibrary    timeout=${SELENIUM_TIMEOUT}
+Library             SeleniumLibrary    timeout=${SELENIUM_TIMEOUT}    run_on_failure=Wait before fail and take screenshot
 Library             OperatingSystem
 Library             Collections
 Library             String
 Library             FakerLibrary
+Library             DateTime
 
 *** Variables ***
 # Also declaring global variables here to avoid RF Language Server extension think they are not defined (they are set in robot_variables.py)
@@ -32,3 +33,7 @@ Initial setup
 Setup Browser Options
   # TODO: Set browser options for each supported browser
   No Operation
+
+Wait before fail and take screenshot
+    Sleep  10 s
+    Capture Page Screenshot

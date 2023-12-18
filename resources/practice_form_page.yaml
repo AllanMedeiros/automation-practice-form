@@ -37,14 +37,27 @@ practice_form_page:
   first_name_txt:                   css=input#firstName
   last_name_txt:                    css=input#lastName
   user_email_email:                 css=input#userEmail
-  gender_male_rdi:                  css=input#gender-radio-1
-  gender_female_rdi:                css=input#gender-radio-2
-  gender_other_rdi:                 css=input#gender-radio-3
+  gender_male_rdi:                  css=label[for="gender-radio-1"]
+  gender_female_rdi:                css=label[for="gender-radio-2"]
+  gender_other_rdi:                 css=label[for="gender-radio-3"]
   mobile_number_nmb:                css=input#userNumber
   birth_date_date:                  css=input#dateOfBirthInput
-  subjects_lkp:                     css=div#subjectsContainer
-  hobby_sports_chk:                 css=input#hobbies-checkbox-1
-  hobby_reading_chk:                css=input#hobbies-checkbox-2
-  hobby_music_chk:                  css=input#hobbies-checkbox-3
+  subjects_lkp:                     css=input#subjectsInput
+  subject_list_sel:                 css=div.subjects-auto-complete__menu-list
+  all_subject_list_itens_opt:       css=div.subjects-auto-complete__option
+  hobby_sports_chk:                 css=label[for=hobbies-checkbox-1]
+  hobby_reading_chk:                css=label[for=hobbies-checkbox-2]
+  hobby_music_chk:                  css=label[for=hobbies-checkbox-3]
   select_picture_file_btn:          css=input#uploadPicture
   current_address_rstxt:            css=textarea#currentAddress
+  # state_sel:                        css=input#react-select-3-input
+  state_sel:                        css=div#state
+  all_state_item_opt:               css=div[id^=react-select-3-option-]
+  state_item_opt:                   css=div#react-select-3-option-
+  # city_sel:                         css=input#react-select-4-input
+  city_sel:                         css=div#city
+  all_city_item_opt:                css=div[id^=react-select-4-option-]
+  city_item_opt:                    css=div#react-select-4-option-
+  submit_btn:                       css=button#submit
+  popup_title_htm:                  css=div#example-modal-sizes-title-lg
+  close_popup_btn:                  css=button#closeLargeModal

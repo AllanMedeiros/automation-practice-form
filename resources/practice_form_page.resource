@@ -12,7 +12,7 @@ fill all the fields with random values
     Input Text    ${practice_form_page.user_email_email}    ${email}
     ${gender_rdi}    Random Element    elements='gender_male_rdi', 'gender_female_rdi', 'gender_other_rdi'    
     Click Element    ${practice_form_page.${gender_rdi}}
-    ${mobile_number}    Phone Number
+    ${mobile_number}    Random Number    digits=10    fix_len=${True}
     Input Text    ${practice_form_page.mobile_number_nmb}    ${mobile_number}
     Fill Birth Date and bypass datepicker
     Add subjects    3
@@ -27,14 +27,14 @@ Select State
     Click Element    ${practice_form_page.state_sel}
     Wait Until Element Is Visible    ${practice_form_page.all_state_item_opt}    timeout=0.5 s
     ${states_qty}    Get Element Count    ${practice_form_page.all_state_item_opt}
-    ${random_state_item}    Random Int    min=0    max=${states_qty}
+    ${random_state_item}    Random Int    min=0    max=${states_qty-1}
     Click Element    ${practice_form_page.state_item_opt}${random_state_item}
 
 Select City
     Click Element    ${practice_form_page.city_sel}
     Wait Until Element Is Visible    ${practice_form_page.all_city_item_opt}    timeout=0.5 s
     ${cities_qty}    Get Element Count    ${practice_form_page.all_city_item_opt}
-    ${random_city_item}    Random Int    min=0    max=${cities_qty}
+    ${random_city_item}    Random Int    min=0    max=${cities_qty-1}
     Click Element    ${practice_form_page.city_item_opt}${random_city_item}
 
 Choose Random Hobbies    
@@ -84,4 +84,4 @@ the form is submited
 
 the confirmation popup is displayed
     Wait Until Element Contains    ${practice_form_page.popup_title_htm}    Thanks for submitting the form    timeout=5 s    error=Confirmation popup was not displayed
-    Sleep    20 s
+    Sleep    10 s

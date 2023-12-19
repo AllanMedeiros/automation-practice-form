@@ -45,4 +45,5 @@ web_tables_page:
   all_action_buttons_icn:   css=div.action-buttons
   all_record_rows_htm:      css=div.rt-tr-group
   record_table_tbl:         css=div.rt-table
+  rows_per_page_sel:        css=select[aria-label="rows per page"]
   

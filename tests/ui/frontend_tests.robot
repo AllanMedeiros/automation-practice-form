@@ -31,4 +31,22 @@ Web Tables record test
     Then the record is properly updated in the table
     When the user deletes the new record
     Then the record is not displayed in the table
-    
+
+Create 12 records in Web Table
+    [Tags]    frontend    challenge_3    bonus_test
+    [Setup]    Given the user access Demo QA page and navigates to Elements > Web Tables
+    [Template]    Add multiple records in Web Table
+    [Teardown]    Delete all created records
+    # Record    Name        Last Name    Email                                Age    Salary        Department
+    1           Tony        Stark        tony.stark@starkindustries.com       38     9999999999    Engineering
+    2           Bruce       Banner       bruce.banner@usdod.com               39     500000        Military
+    3           Steve       Rogers       steve.rogers@usarmy.com              26     350000        Army
+    4           Thor        Odinson      thor.odinson@asgard.com              1500   9999999999    Confidential 
+    5           Natasha     Romanov      natasha.romanov@kgb.com              37     150000        Special Operations
+    6           Carol       Danvers      carol.danvers@usairforce.com         30     120000        Air Force
+    7           Gamora      Whoberi      gamora.whoberi@milano.com            24     750000        Defense
+    8           Clint       Barton       clint.barton@shield.com              00     250000        SHIELD
+    9           James       Rhodes       james.rhodes@usairforce.com          40     700000        Air Force
+    10          Sam         Wilson       sam.wilson@shield.com                00     50000         SHIELD    
+    11          Pietro      Maximoff     pietro.maximoff@hidra.com            26     0             NDA
+    12          Wanda       Maximoff     wanda.maximoff@hidra.com             28     0             NDA

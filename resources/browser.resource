@@ -13,12 +13,13 @@ ${SELENIUM_PORT}
 ${SELENIUM_TIMEOUT}
 ${BROWSER}
 ${PROFILE_PATH}
+${SELENIUM_DEMO_MODE}
 
 *** Keywords ***
 Initial setup
     # This test suite was only tested in Chrome for the moment (hardcoded Chrome Options)
     # ${browser_options}    Setup Browser Options
-
+    IF    $SELENIUM_DEMO_MODE==$True    Set Selenium Speed    0.5 s
     ${EXC_SWITCHES}    Create List    enable-automation    enable-logging
 
     # Setting this SPKI encoded list using list variable is not working, so they are hardcoded in options paramenter

@@ -2,6 +2,7 @@
 Resource    ../../resources/demoqahome_page.resource
 Resource    ../../resources/practice_form_page.resource
 Resource    ../../resources/browser_windows_page.resource
+Resource    ../../resources/web_tables_page.resource
 
 *** Test Cases ***
 Fill Form with random values
@@ -19,3 +20,15 @@ New Window behavior test
     When the user clicks on New Window button
     Then a new Window is displayed with expected text
     And the user closes the window
+
+Web Tables record test
+    [Tags]    frontend    challenge_3
+    Given the user access Demo QA page
+    And navigate to Elements > Web Tables
+    When the user creates a new record
+    Then the record is properly displayed in the table
+    When the user updates the new record
+    Then the record is properly updated in the table
+    When the user deletes the new record
+    Then the record is not displayed in the table
+    

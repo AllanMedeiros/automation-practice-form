@@ -23,7 +23,7 @@
 # opt       - Each option within a dropdown or list selection fields.
 # rdi       - Radio option
 # tab       - Tab item to switch pages
-# lkp       - Lookup text field, with a magnifying glass button to search for an item on a popup window
+# lkp       - Lookup text field, with a magnifying glass button to search for an item on a popup window or a autocomplete behavior
 # tbl       - Table
 # cell      - Table cell
 # row       - Table row
@@ -33,17 +33,16 @@
 #  1. If the locator matches more than one web element, please start its name with "all" or "any".
 #  2. Element Type must follow what is visible to the user, no matter the real HTML tag of the element.
 
-mainmenu:
-  page_title_htm:             css=div.main-header
-  elements_mn:                css=div.top-card:nth-child(1) svg
-  forms_mn:                   css=div.top-card:nth-child(2) svg
-  alerts_frame_windows_mn:    css=div.top-card:nth-child(3) svg
-
-formsmenu:
-  practice_form_mn:           css=div.element-group:nth-child(2) li#item-0
-
-alertsmenu:
-  browser_windows_mn:         css=div.element-group:nth-child(3) li#item-0
-
-elementsmenu:
-  web_tables_mn:              css=div.element-group:nth-child(1) li#item-3
+web_tables_page:
+  add_record_btn:           id=addNewRecordButton
+  first_name_txt:           css=input#firstName
+  last_name_txt:            css=input#lastName
+  user_email_email:         css=input#userEmail
+  age_nmb:                  css=input#age
+  salary_cur:               css=input#salary
+  department_txt:           css=input#department
+  submit_btn:               id=submit
+  all_action_buttons_icn:   css=div.action-buttons
+  all_record_rows_htm:      css=div.rt-tr-group
+  record_table_tbl:         css=div.rt-table
+  

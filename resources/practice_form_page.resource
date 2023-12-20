@@ -51,7 +51,7 @@ Fill Birth Date and bypass datepicker
     ${birth_date_formated}    Convert Date    ${birth_date_str}    result_format=%d %b %Y
     Click Element    ${practice_form_page.birth_date_date}
     Press Keys    ${practice_form_page.birth_date_date}    CONTROL+A    SPACE
-    Sleep  1 s
+    Sleep  1 s    reason=Sleep to avoid issues on filling Birth Date
     Input Text    ${practice_form_page.birth_date_date}    ${birth_date_formated}
     Press Keys    ${practice_form_page.birth_date_date}    ESC
 
@@ -84,4 +84,3 @@ the form is submited
 
 the confirmation popup is displayed
     Wait Until Element Contains    ${practice_form_page.popup_title_htm}    Thanks for submitting the form    timeout=5 s    error=Confirmation popup was not displayed
-    Sleep    10 s

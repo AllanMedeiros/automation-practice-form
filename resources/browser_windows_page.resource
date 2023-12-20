@@ -12,3 +12,4 @@ a new Window is displayed with expected text
 
 the user closes the window
     Close Window
+    Switch Window    MAIN

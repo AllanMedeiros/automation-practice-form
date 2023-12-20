@@ -38,6 +38,7 @@ mainmenu:
   elements_mn:                css=div.top-card:nth-child(1) svg
   forms_mn:                   css=div.top-card:nth-child(2) svg
   alerts_frame_windows_mn:    css=div.top-card:nth-child(3) svg
+  widgets_mn:                 css=div.top-card:nth-child(4) svg
 
 formsmenu:
   practice_form_mn:           css=div.element-group:nth-child(2) li#item-0
@@ -47,3 +48,6 @@ alertsmenu:
 
 elementsmenu:
   web_tables_mn:              css=div.element-group:nth-child(1) li#item-3
+
+widgetsmenu:
+  progress_bar_mn:            css=div.element-group:nth-child(4) li#item-4

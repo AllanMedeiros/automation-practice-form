@@ -4,7 +4,6 @@ Variables       demoqahome_page.yaml
 
 *** Variables ***
 ${URL}    https://demoqa.com/
-# ${URL}    https://google.com/
 
 *** Keywords ***
 the user access Demo QA page
@@ -23,6 +22,12 @@ navigate to Alerts, Frame & Windows > Browser Windows
 
 navigate to Elements > Web Tables
     Click Element    ${mainmenu.elements_mn}
-    Element Should Contain    ${mainmenu.page_title_htm}    Elements            message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+    Element Should Contain    ${mainmenu.page_title_htm}    Elements      message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
     Click Element    ${elementsmenu.web_tables_mn}
-    Element Should Contain    ${mainmenu.page_title_htm}    Web Tables            message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+    Element Should Contain    ${mainmenu.page_title_htm}    Web Tables    message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+
+navigate to Widgets > Progress Bar
+    Click Element    ${mainmenu.widgets_mn}
+    Element Should Contain    ${mainmenu.page_title_htm}    Widgets         message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})
+    Click Element    ${widgetsmenu.progress_bar_mn}
+    Element Should Contain    ${mainmenu.page_title_htm}    Progress Bar    message=Expected page is not displayed within the default timeout (${SELENIUM_TIMEOUT})

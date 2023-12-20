@@ -1,0 +1,4 @@
+progress_bar_page:
+  start_stop_btn:         id=startStopButton
+  reset_btn:              id=resetButton
+  progress_bar_htm:       css=div#progressBar div

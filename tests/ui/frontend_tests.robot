@@ -3,6 +3,7 @@ Resource    ../../resources/demoqahome_page.resource
 Resource    ../../resources/practice_form_page.resource
 Resource    ../../resources/browser_windows_page.resource
 Resource    ../../resources/web_tables_page.resource
+Resource    ../../resources/progress_bar_page.resource
 
 *** Test Cases ***
 Fill Form with random values
@@ -50,3 +51,12 @@ Create 12 records in Web Table
     10          Sam         Wilson       sam.wilson@shield.com                00     50000         SHIELD    
     11          Pietro      Maximoff     pietro.maximoff@hidra.com            26     0             NDA
     12          Wanda       Maximoff     wanda.maximoff@hidra.com             28     0             NDA
+
+Verify Progress Bar behavior
+    [Tags]    frontend    challenge_4
+    Given the user access Demo QA page
+    And navigate to Widgets > Progress Bar
+    And the user starts the Progress Bar
+    When the Progress Bar is stoped before 25% mark
+    Then the Progress Bar value must be lower or equal than 25%
+    And the user resumes the Progress Bar until 100% and resets it

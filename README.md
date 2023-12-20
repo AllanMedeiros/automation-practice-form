@@ -161,28 +161,30 @@ These are suggested VS Code plugins that best fit this automation project:
 
 Running a Test Suite
 --------------------
-1. First make a copy of files `robot_variables_template.py` to your home user folder and remove the `template` suffix.
+#### OBS: DUE TO ADBLOCK EXTENSION, THE FIRST TEST RUN MAIL FAIL WHILE THE EXTENSION IS INSTALLED.
+1. First make a copy of files `robot_variables_template.py` to your home user or project root folder and remove the `template` suffix.
 1. File `robot_variables` has all initial variables to run RF and you have to change to fit your machine settings as needed, since it will be ignored by Git anyway as each automation developer can have different settings: 
     * `SELENIUM_SERVER = "127.0.0.1"` - Selenium Grid Server IP Address. If you want to run the tests locally, then remove or leave this variable empty.
     * `SELENIUM_PORT = "4444"` - Default Selenium Grid Server port. Usually there won't be needed to change this.
-    * `BROWSER = "chrome"`
-        Which browser you want to run the tests. The available options are: `chrome` (Google Chrome, Microsoft Edge 2020, Opera), `firefox`, `webkit` (Apple Safari, Mail, AppStore on MacOS and iOS). Default is `chrome`, other browsers were not tested.
-    * `TIMEOUT = "30s"`  
-        Regular timeout that applies to most keywords. If this time is exceeded the test fails. You can *eventually* increase this time when the environment slowness reason is known.
+    * `SELENIUM_TIMEOUT = "30s"` - Regular timeout that applies to most keywords. If this time is exceeded the test fails. You can *eventually* increase this time when the environment slowness reason is known.
+    * `SELENIUM_DEMO_MODE = False` - Set this option to True (without quotes) to slow down each Selenium command for demonstration or debugging purposes.
+    * `BROWSER = "chrome"` - Which browser you want to run the tests. The available options are: `chrome` (also as gc or googlechrome), other browsers were not tested.
 
-1. To run the script locally, outside the Docker container:
+1. To run the script locally:
     * To run the full test suite on another Git Bash / terminal window, activate the Python Virtual Environment as stated before and use this command:
     ```
-    (env) $ robot --variablefile ~/robot_variables.py --loglevel TRACE --outputdir results ./tests/
+    (env) $ robot --variablefile [PATH_TO]/robot_variables.py --loglevel TRACE --outputdir results ./tests/
     ```
     * To run specific tests only, after `--include` parameter, add the TAG of the test case you want to run. You can add more `--include` parameters to run other tests. You can also use logical operators (AND, OR and NOT) to select the tests, like `--include demoORmy-test-tag`, this will run any tests that have at least one of the tags. Using `--include demoNOTmy-test-tag` will run all tests with the first tag except the tests with the second tag. And with `--include demoANDmy-test-tag` will run tests that have BOTH tags. You can achieve the same result as OR operator by adding `--exclude` option and the test tag.
     ```
-    (env) $ robot --variablefile ~/robot_variables.py --loglevel TRACE --outputdir results --include [MyTestTag] ./tests/    
+    (env) $ robot --variablefile [PATH_TO]/robot_variables.py --loglevel TRACE --outputdir results --include [MyTestTag] ./tests/    
     ```
     * Option `--variablefile` simply points to your local copy of `robot_variables.py`.
     * Set `--loglevel` option to `TRACE` when running locally for debugging, but in automation production running environment this should be set to `INFO` to save resources.
     * `--outputdir` refers to where RF should save the report after finishing the execution. Can be `logs*` or `results*` folder names, as both are already ignored in Git.
-1. To run the script in the container, first you need to setup the proper user on WSL distro to match the user on Docker container:
+    * After the test is finished, you can view the report opening this default path on you browser on Windows: `C:\[AUTOMATION_PATH]\results\report.html`. Replace `AUTOMATION_PATH` with the path where you cloned the repository.
+
+1. To run the script in the Docker container, first you need to setup the proper user on WSL distro to match the user on Docker container:
     * Create the docker user group, usually it is created during Docker installation:  
         `$ sudo groupadd docker`
     * Then run this commando to add the currently logged in user to the docker group:  
@@ -205,4 +207,5 @@ Running a Test Suite
 - [Robot Framework User Guide](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
 - [Built In Keywords](http://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
 - [SeleniumLibrary Keywords](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
+- [FakerLibrary Keywords](https://guykisel.github.io/robotframework-faker/)
 - [Git Tutorial](https://testautomationu.applitools.com/git-tutorial/)

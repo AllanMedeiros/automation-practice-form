@@ -79,7 +79,7 @@ Add subjects
         ${subjects_qty}    Evaluate    ${subjects_qty} -1
     END
 
-the form is submited
+the form is submitted
     Click Element    ${practice_form_page.submit_btn}
 
 the confirmation popup is displayed

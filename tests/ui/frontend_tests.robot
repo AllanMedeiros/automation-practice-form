@@ -11,7 +11,7 @@ Fill Form with random values
     Given the user access Demo QA page
     And navigate to Forms > Practice Form
     And fill all the fields with random values
-    When the form is submited
+    When the form is submitted
     Then the confirmation popup is displayed
 
 New Window behavior test
@@ -57,6 +57,6 @@ Verify Progress Bar behavior
     Given the user access Demo QA page
     And navigate to Widgets > Progress Bar
     And the user starts the Progress Bar
-    When the Progress Bar is stoped before 25% mark
+    When the Progress Bar is stopped before 25% mark
     Then the Progress Bar value must be lower or equal than 25%
     And the user resumes the Progress Bar until 100% and resets it
